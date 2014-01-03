@@ -2,15 +2,23 @@
 use Mojolicious::Lite;
 use FindBin qw($Bin);
 use lib     qq{$Bin/lib};
-use Messages::Memory;
+use feature qw(state);
+use Module::Load;
+#use Messages::Memory;
 use DateTime;
 
 my $counter;
 my %clients;
-my $messages = Messages::Memory->new();
 
 app->sessions->default_expiration(86400);
+plugin JSONConfig => { file => 'ChatIt.conf.json' };
+load(app->config->{message_storage});
 
+helper 'messages' => sub { 
+	    my $controller = shift;
+        state $module = app->config->{message_storage}->new( config => app->config );
+        return $module;
+};
 helper 'message_all_participants' => sub {
 	   my ($controller,$msg,$who) = @_;
 	   my $hms  = DateTime->now->hms();
@@ -19,9 +27,9 @@ helper 'message_all_participants' => sub {
 			  	                       user     => $who,
 			  	                       message  => $msg,
 			  	                       time     => $hms );
-       $messages->add_message( { user    => $who,
-       	                         message => $msg,
-       	                         time    => $hms });
+       $controller->messages()->add_message( { user    => $who,
+		       	                               message => $msg,
+		       	                               time    => $hms });
        	                        
 	   foreach my $tx_str (keys(%clients)) {
 	       $clients{$tx_str}->send( { text => $html } );
@@ -38,7 +46,7 @@ get '/' => sub {
   }
   # Why cant we do url_for('/chat')->to_abs on a websocket route????
   $self->render( template => 'application/chat', 
-                 messages => $messages,
+                 messages => $self->messages(),
                  ws       => sprintf("ws://%s:%d/%s",$self->req->url->to_abs->host,
                                                      $self->req->url->to_abs->port,'chat') );
 };
