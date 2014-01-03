@@ -7,7 +7,9 @@ has 'messages' => ( is      => 'rw',
                     default => sub { [ ] },
                     handles => { add_message      => 'push',
                     	         has_messages     => 'count',
-                    	         get_all_messages => 'elements'}) ;
+                    	         get_all_messages => 'elements'});
+
+with 'Messages::IMessage';
 
 no Moose;
 1;
