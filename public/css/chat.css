@@ -1,0 +1,44 @@
+.chat_window {
+	height: 500px;
+	box-shadow: 2px 2px 2px #888888 inset !important;
+	margin-bottom: 15px;
+	margin-top: 20px;
+	padding-right: 0px !important;
+	padding-left: 0px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	overflow-y: auto; 
+}
+
+.single_message.row {
+	box-shadow: 1px 1px 1px #888888 inset;
+	width: 100%;
+	font-size: 15px;
+	background-image: -ms-linear-gradient(top left, #FFFFFF 0%, #76E1A1 100%);
+	background-image: -moz-linear-gradient(top left, #FFFFFF 0%, #76E1A1 100%);
+	background-image: -o-linear-gradient(top left, #FFFFFF 0%, #76E1A1 100%);
+	background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FFFFFF), color-stop(1, #76E1A1));
+	background-image: -webkit-linear-gradient(top left, #FFFFFF 0%, #76E1A1 100%);
+	background-image: linear-gradient(to bottom right, #FFFFFF 0%, #76E1A1 100%);
+}
+
+.alert {
+	padding: 0px;
+	padding-left: 10px;
+	margin-bottom: 5px;
+}
+
+.message_time {
+	background-color: #76E1A1;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	box-shadow: 1px 1px 1px #888888 inset;
+}
+
+.user_name {
+	background-color: #76E1A1;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	font-weight: bold;
+	box-shadow: 1px 1px 1px #888888 inset;
+}

@@ -1,0 +1,5 @@
+<div class="single_message row alert alert-success">
+	<div class="user_name col-md-1"><%= $user %></div>
+	<div class="message col-md-10"><%= $message %></div>
+	<div class="message_time col-md-1"><%= $time %></div>
+</div>
