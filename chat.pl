@@ -16,11 +16,13 @@ load(app->config->{message_storage});
 helper 'messages' => sub { 
 	    my $controller = shift;
         state $module = app->config->{message_storage}->new( config => app->config );
+        
         return $module;
 };
+
 helper 'message_all_participants' => sub {
 	   my ($controller,$msg,$who) = @_;
-	   my $hms  = DateTime->now->hms();
+	   my $hms  = DateTime->now()->hms();
 	   my $html = $controller->render( template => 'application/message', 
 			    	                   partial  => 1,
 			  	                       user     => $who,

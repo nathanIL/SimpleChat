@@ -1,0 +1,4 @@
+{ 
+  "message_storage": "Messages::MemCached",
+  "servers": ["192.168.1.105:11211"] 
+}
