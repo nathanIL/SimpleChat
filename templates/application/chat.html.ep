@@ -7,7 +7,7 @@
 </div>
 <div class="row">
 <div class="input-group">
-  <span class="input-group-addon"><img src="https://cdn3.iconfinder.com/data/icons/people-professions/512/Face_C-20.png"/></span>
+  <span class="input-group-addon"><img src="<%= url_for('img/me.png')->to_abs %>"/></span>
   <input type="text" class="form-control" id="messageBox" placeholder="type ya'r message">
    <span class="input-group-btn">
         <button class="btn btn-default" id="postBtn" type="button">Post!</button>

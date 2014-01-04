@@ -1,0 +1,4 @@
+% layout 'global_layout';
+<div class="jumbotron">
+  <h1>Logged out from chat</h1>
+</div>

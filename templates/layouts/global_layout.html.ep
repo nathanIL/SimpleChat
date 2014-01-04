@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <head>
-%= javascript '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'
-%= javascript '//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js'
-%= stylesheet '//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css'
+%= javascript 'js/jquery.min.js'
+%= javascript 'js/bootstrap.min.js'
+%= stylesheet 'css/bootstrap.min.css'
 %= stylesheet 'css/global_layout.css'
 <link rel="shortcut icon" href="http://icons.iconarchive.com/icons/milosz-wlazlo/boomy/48/chat-icon.png"/>
 </head>
@@ -12,9 +12,11 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="#">Ch@atIt</a>
         </div>
+<% if ($self->session('user')) { %>
         <ul class="nav navbar-nav navbar-right">
             <a href="<%= url_for('/logout')->to_abs %>">Hello <%= session 'user' %></a>
         </ul>
+<% } %>
       </div>
  </div>
 <div class="container">

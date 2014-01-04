@@ -4,7 +4,6 @@ use FindBin qw($Bin);
 use lib     qq{$Bin/lib};
 use feature qw(state);
 use Module::Load;
-#use Messages::Memory;
 use DateTime;
 
 my $counter;
@@ -56,7 +55,7 @@ get '/logout' => sub {
 	 
 	 if ($self->session('user')) {
 	 	delete $self->session->{user};
-	 	$self->render( template => 'application/bye_bye' );
+	 	$self->render( template => 'application/logout' );
 	 }
 };
 

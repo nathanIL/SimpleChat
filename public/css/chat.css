@@ -14,12 +14,8 @@
 	box-shadow: 1px 1px 1px #888888 inset;
 	width: 100%;
 	font-size: 15px;
-	background-image: -ms-linear-gradient(top left, #FFFFFF 0%, #76E1A1 100%);
-	background-image: -moz-linear-gradient(top left, #FFFFFF 0%, #76E1A1 100%);
-	background-image: -o-linear-gradient(top left, #FFFFFF 0%, #76E1A1 100%);
-	background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FFFFFF), color-stop(1, #76E1A1));
-	background-image: -webkit-linear-gradient(top left, #FFFFFF 0%, #76E1A1 100%);
-	background-image: linear-gradient(to bottom right, #FFFFFF 0%, #76E1A1 100%);
+	color: #D7F7D8;
+
 }
 
 .alert {
@@ -29,16 +25,18 @@
 }
 
 .message_time {
-	background-color: #76E1A1;
+	background-color: #623860;
 	margin-top: 3px;
 	margin-bottom: 3px;
-	box-shadow: 1px 1px 1px #888888 inset;
 }
 
 .user_name {
-	background-color: #76E1A1;
+	background-color: #623860;
 	margin-top: 3px;
 	margin-bottom: 3px;
 	font-weight: bold;
-	box-shadow: 1px 1px 1px #888888 inset;
+}
+
+.message {
+	color: #000000;
 }
