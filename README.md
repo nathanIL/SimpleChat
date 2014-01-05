@@ -13,9 +13,11 @@ Its not, by all means, supposed to be used in production environment. its just m
 and <b>Mojolicious::Lite</b>.
 
 ## TODO:
+<b>0. First an foremost, fix language support - only English is supported</b>
 1. Fix CSS issues, and prettify.
 2. Encapsulate clients behavior in a dedicated module.
 3. Add emoticons / smileys.
 4. add real-time ads to messages by parsing relevant keywords. upon keyword mouse over event,
 a tooltip will pop out showing some relevant details (ad info).
 5. Custom user logins (usernames),
+6. change default exception & not found pages from the Mojo templated to custom ones.
