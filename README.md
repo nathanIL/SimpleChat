@@ -13,7 +13,7 @@ Its not, by all means, supposed to be used in production environment. its just m
 and <b>Mojolicious::Lite</b>.
 
 ## TODO:
-0. First an foremost, fix language support - only English is supported.
+0. First an foremost, add UTF8 support.
 1. Fix CSS issues, and prettify.
 2. Encapsulate clients behavior in a dedicated module.
 3. Add emoticons / smileys.
